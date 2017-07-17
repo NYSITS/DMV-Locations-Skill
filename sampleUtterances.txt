@@ -1,0 +1,6 @@
+AnswerIntent {Location}
+AnswerIntent {Location} dmv
+AnswerIntent where is the {Location} dmv
+AnswerIntent where is the {Location} dmv located
+AnswerIntent what are the hours for the {Location} dmv
+AnswerIntent is the {Location} dmv open today
