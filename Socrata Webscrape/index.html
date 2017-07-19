@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Socrata Webscrape</title>
+
+	<link rel="stylesheet" href="css/main.css"> <!-- includes bootstrap -->
+
+  <!-- load angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body class="container" ng-app="DmvApp" ng-controller="DmvCtrl">
+
+	<h1>DMV Locations & Office Hours</h1>
+
+	<p>Search: <input type="text" ng-model="query" class="form-control"></p>
+
+	<table class="table">
+		<tr>
+			<th><a href="" ng-click="sortBy = 'office_name'">Office Name</a></th>
+			<th><a href="" ng-click="sortBy = 'street_address_line_1'">Street Address 1</a></th>
+      <th><a href="" ng-click="sortBy = 'street_address_line_2'">Street Address 2</a></th>
+			<th><a href="" ng-click="sortBy = 'city'">City</a></th>
+			<th><a href="" ng-click="sortBy = 'state'">State</a></th>
+			<th><a href="" ng-click="sortBy = 'zip_code'">Zip Code</a></th>
+			<th><a href="" ng-click="sortBy = 'monday_beginning_hours'">Monday Beginning Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'monday_ending_hours'">Monday Ending Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'tuesday_beginning_hours'">Tuesday Beginning Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'tuesday_ending_hours'">Tuesday Ending Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'wednesday_beginning_hours'">Wednesday Beginning Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'wednesday_ending_hours'">Wednesday Ending Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'thursday_beginning_hours'">Thursday Beginning Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'thursday_ending_hours'">Thursday Ending Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'friday_beginning_hours'">Friday Beginning Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'friday_ending_hours'">Friday Ending Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'saturday_beginning_hours'">Saturday Beginning Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'saturday_ending_hours'">Saturday Ending Hours</a></th>
+      <th><a href="" ng-click="sortBy = 'longitude'">Longitude</a></th>
+      <th><a href="" ng-click="sortBy = 'latitude'">Latitude</a></th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="dmv in dmv | orderBy:sortBy | filter:query">
+			<td>{{dmv.office_name}}</td>
+			<td>{{dmv.street_address_line_1}}</td>
+      <td>{{dmv.street_address_line_2}}</td>
+			<td>{{dmv.city}}</td>
+			<td>{{dmv.state}}</td>
+			<td>{{dmv.zip_code}}</td>
+			<td>{{dmv.monday_beginning_hours}}</td>
+      <td>{{dmv.monday_ending_hours}}</td>
+      <td>{{dmv.tuesday_beginning_hours}}</td>
+      <td>{{dmv.tuesday_ending_hours}}</td>
+      <td>{{dmv.wednesday_beginning_hours}}</td>
+      <td>{{dmv.wednesday_ending_hours}}</td>
+      <td>{{dmv.thursday_beginning_hours}}</td>
+      <td>{{dmv.thursday_ending_hours}}</td>
+      <td>{{dmv.friday_beginning_hours}}</td>
+      <td>{{dmv.friday_ending_hours}}</td>
+      <td>{{dmv.saturday_beginning_hours}}</td>
+      <td>{{dmv.saturday_ending_hours}}</td>
+      <td>{{dmv.longitude}}</td>
+      <td>{{dmv.latitude}}</td>
+		</tr>
+	</table>
+
+	<!-- load our script -->
+	<script src="js/pets.js"></script>
+
+</body>
+</html>

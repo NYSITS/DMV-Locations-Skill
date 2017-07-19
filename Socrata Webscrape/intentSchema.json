@@ -1,0 +1,28 @@
+{
+  "intents": [
+    {
+      "intent": "AnswerIntent",
+      "slots": [
+        {
+          "name": "Location",
+          "type": "LIST_OF_DMV_OFFICES"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
